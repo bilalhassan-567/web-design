@@ -1,0 +1,289 @@
+/* Common Styles for both sections */
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: whitesmoke;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* --- First Page Styles --- */
+  .first-section {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+  }
+  
+  .carousel {
+    width: 80%;
+    height: auto;
+    perspective: 1000px;
+    position: relative;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-item {
+    position: absolute;
+    opacity: 0.5;
+    transition: transform 0.5s, opacity 0.5s;
+  }
+  
+  .carousel-item img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-item.center {
+    transform: scale(1.5) translateZ(0);
+    opacity: 1;
+    z-index: 2; /* Ensure the center image is in front */
+  }
+  
+  .carousel-item.left1, .carousel-item.right1 {
+    transform: translateX(-265px) scale(1);
+  }
+  
+  .carousel-item.left2, .carousel-item.right2 {
+    transform: translateX(-465px) scale(0.75);
+  }
+  
+  .carousel-item.right1 {
+    transform: translateX(265px) scale(1);
+  }
+  
+  .carousel-item.right2 {
+    transform: translateX(465px) scale(0.75);
+  }
+  
+  /* --- Second Page Styles --- */
+  .second-section {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background: linear-gradient(135deg, #0a163d 0%, #0c1f4b 100%);
+  }
+
+  .second-section .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    padding: 50px 0px;
+  }
+
+  .container-images {
+    position: relative;
+    width: 350px;
+    height: 450px;
+    margin-right: 50px;
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease, z-index 0.5s ease;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    border: 5px solid #fff;
+  }
+
+  #img1 {
+    z-index: 3;
+    transform: translateX(0) scale(1);
+  }
+
+  #img2 {
+    z-index: 2;
+    transform: translateX(40px) scale(0.9);
+  }
+
+  #img3 {
+    z-index: 1;
+    transform: translateX(80px) scale(0.8);
+  }
+
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+
+  .text-container {
+    max-width: 500px;
+    color: #fff;
+    margin-left: 15%;
+  }
+
+  .about-us {
+    background: #3453d0;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .number {
+    background: #00c0ff;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #fff;
+    margin-left: 10px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .read-more {
+    background-color: #2a84f2;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .read-more:hover {
+    background-color: #1b6edc;
+  }
+
+
+
+
+
+
+
+
+
+  /* Last Section */
+.third-section{
+  padding: 100px 0px;
+}
+
+.third-section .container{
+  justify-content: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.rounded-box {
+  display: flex;
+  border-radius: 5px; /* Less rounded edges */
+  overflow: hidden;
+  width: calc(50% - 10px); /* Two boxes per row with a gap */
+  margin: 0; /* No margin for overlapping */
+  background-color: #ffffff;
+  border: 1px solid #007bff; /* Thin blue border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease; /* Add transition for background change */
+  position: relative; /* Enable positioning for overlap */
+}
+
+.rounded-box:nth-child(even) {
+  margin-left: -30px; /* Overlap the even boxes to the left */
+}
+
+.rounded-box:nth-child(odd) {
+  margin-right: 10px; /* Keep some space on the right for odd boxes */
+}
+
+.rounded-box:hover {
+  background: linear-gradient(to bottom, #add8e6, #0056b3); /* Gradient hover effect */
+  color: white; /* Change text color to white on hover */
+}
+
+.image-container {
+  flex: 1;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.content h2 {
+  margin: 0;
+  font-size: 20px;
+  transition: color 0.3s ease; /* Transition for heading color change */
+}
+
+.content p {
+  margin: 10px 0;
+  transition: color 0.3s ease; /* Transition for paragraph color change */
+}
+
+.learn-more {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for button color change */
+}
+
+/* Change button styles when hovering over the box */
+.rounded-box:hover .learn-more {
+  background-color: white; /* Button background turns white */
+  color: #007bff; /* Button text turns blue */
+}
+
+/* Change text color on hover */
+.rounded-box:hover .content h2,
+.rounded-box:hover .content p {
+  color: white; /* Change text color to white */
+}
+
+/* Spacing between rows */
+.container > div {
+  margin-bottom: 50px; /* Distance between rows */
+}
+
