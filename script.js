@@ -9,31 +9,31 @@ function rotateImages() {
     img1.style.zIndex = "1";
     img2.style.zIndex = "3";
     img3.style.zIndex = "2";
-    
+
     img1.style.transform = "translateX(80px) scale(0.8)";
     img2.style.transform = "translateX(0) scale(1)";
     img3.style.transform = "translateX(40px) scale(0.9)";
-    
+
     current = 2;
   } else if (current === 2) {
     img1.style.zIndex = "2";
     img2.style.zIndex = "1";
     img3.style.zIndex = "3";
-    
+
     img1.style.transform = "translateX(40px) scale(0.9)";
     img2.style.transform = "translateX(80px) scale(0.8)";
     img3.style.transform = "translateX(0) scale(1)";
-    
+
     current = 3;
   } else {
     img1.style.zIndex = "3";
     img2.style.zIndex = "2";
     img3.style.zIndex = "1";
-    
+
     img1.style.transform = "translateX(0) scale(1)";
     img2.style.transform = "translateX(40px) scale(0.9)";
     img3.style.transform = "translateX(80px) scale(0.8)";
-    
+
     current = 1;
   }
 }
@@ -70,3 +70,21 @@ function showNextSlide() {
 setInterval(showNextSlide, 3000); // Auto-slide every 3 seconds
 
 updateCarousel(); // Initialize carousel on load
+
+
+$(function () {
+
+  $('.center-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    arrows: false,
+    dots: true,
+    speed: 300,
+    centerPadding: '0px',
+    infinite: true,
+    autoplaySpeed: 5000,
+    autoplay: false
+  });
+
+});
